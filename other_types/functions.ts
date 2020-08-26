@@ -16,3 +16,23 @@ function printInput(value: string): void {
 Void is the type you will get when nothing is being returned, whilst JS will say this has returned 
 undefined TS will differentiate and class a log as void.
 */
+
+let addContainer: Function;
+
+addContainer = add;
+//addContainer = printInput
+
+console.log(addContainer(2, 6));
+
+/* 
+We can also use Function as a type, but, keep in mind that addContainer = printInput will not cause an error
+as it is still a function. We need to be more concise with our type and we can be.
+*/
+
+let valueLogger: (val: string) => void;
+valueLogger = printInput;
+
+/*
+This says, I want this variable to hold a function that takes one argument, a string and returns nothing
+anything else will cause an error
+*/
