@@ -1,4 +1,12 @@
-function combine(input1: number | string, input2: number | string) {
+type Combo = number | string;
+
+/* 
+if we are going to reuse a union of types over and over, it may be worth storing them 
+under an alias, we do so by using the type key word, followed by the name of the variable
+the union is being stored in.
+*/
+
+function combine(input1: Combo, input2: Combo) {
   let result;
   if (typeof input1 === "number" && typeof input2 === "number") {
     result = input1 + input2;
